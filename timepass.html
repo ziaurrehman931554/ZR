@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get In Touch</title>
+    <script src="https://kit.fontawesome.com/75dcbae3e8.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="logoz.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 255, 0.267), rgba(25, 25, 88, 0.174)), url(download\ \(1\).jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .formfield {
+            width: 50%;
+            max-width: 450px;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 50px 60px 70px;
+            text-align: center;
+            border-radius: 20px 0px 20px 0px;
+        }
+        
+        .formfield h1 {
+            font-size: 30px;
+            color: rgb(29, 29, 194);
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .formfield h1::after {
+            content: '';
+            width: 30px;
+            height: 4px;
+            border-radius: 3px;
+            position: absolute;
+            background: rgb(29, 29, 194);
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .field {
+            background: rgba(29, 29, 194, 0.374);
+            display: flex;
+            margin: 15px 0;
+            align-items: center;
+            width: 100%;
+            border-radius: 10px;
+            padding: 5px;
+            max-height: 60px;
+            overflow: hidden;
+            transition: display 0.5;
+        }
+        
+        input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            padding: 18px 15px;
+        }
+        
+        .field i {
+            padding-left: 5px;
+            color: rgb(29, 29, 194);
+        }
+        
+        .formfield p {
+            text-align: left;
+            font-size: 10px;
+            font-style: italic;
+            color: rgb(29, 29, 194);
+        }
+        
+        .formfield p a {
+            text-decoration: none;
+        }
+        
+        .formfield p a:hover {
+            text-decoration: underline;
+        }
+        
+        .formfield .button {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 5px;
+        }
+        
+        .formfield button {
+            border: none;
+            outline: 0;
+            padding: 5px 30px;
+            border-radius: 20px;
+            background: rgb(29, 29, 194);
+            color: red;
+            transition: 0.5s;
+        }
+        
+        .formfield button:hover {
+            letter-spacing: 2px;
+        }
+        
+        .formfield button.disabled {
+            background-color: rgba(29, 29, 194, 0.374);
+            color: rgb(217, 27, 27);
+        }
+        
+        #forgot {
+            display: none;
+        }
+        
+        #main {
+            height: 350px;
+            transition: height 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="formfield">
+            <div id="main">
+                <h1 id="title">Sign up</h1>
+                <form action="">
+                    <div class="field" id="name">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <p id="forgot"><a href="#">Forgot password?</a></p>
+                    <div class="button">
+                        <button type="button" id="su">Sign up</button>
+                        <button type="button" id="si" class="disabled">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        let su = document.getElementById("su");
+        let si = document.getElementById("si");
+        let title = document.getElementById("title");
+        let name = document.getElementById("name");
+        let main = document.getElementById("main");
+        let forgot = document.getElementById("forgot");
+
+        si.onclick = function() {
+            name.style.display = "none";
+            title.innerHTML = "Sign in";
+            su.classList.add("disabled");
+            si.classList.remove("disabled");
+            main.style.height = "250px";
+            forgot.style.display = "block";
+        }
+        su.onclick = function() {
+            name.style.display = "flex";
+            title.innerHTML = "Sign up";
+            si.classList.add("disabled");
+            su.classList.remove("disabled");
+            main.style.height = "350px";
+            forgot.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
