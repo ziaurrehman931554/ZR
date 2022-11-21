@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zia-ur-Rehman</title>
+    <link rel="icon" href="logoz.png">
+    <script src="https://kit.fontawesome.com/75dcbae3e8.js" crossorigin="anonymous"></script>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        body {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .header {
+            background-image: linear-gradient(rgba(0, 225, 255, 0.567), rgba(25, 88, 84, 0.574)), url(backk.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+        }
+        
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            z-index: 1000;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0, 255, 255, 0.474);
+            color: white;
+        }
+        
+        nav .logo {
+            width: 120px;
+            height: 50px;
+            margin-left: 15px;
+            z-index: 10;
+            background: url(logoz.png);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        nav .logo:hover {
+            cursor: pointer;
+        }
+        
+        nav .buttons {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            height: 10px;
+            margin-right: 10px;
+        }
+        
+        nav .buttons li {
+            list-style: none;
+            padding: 0 10px;
+        }
+        
+        nav .buttons li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.5s;
+        }
+        
+        nav .buttons li a:hover {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            letter-spacing: 0.7px;
+        }
+        
+        nav .buttons button a {
+            text-decoration: none;
+        }
+        
+        nav .buttons button {
+            border: none;
+            outline: 0;
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: transparent;
+            font-size: 20px;
+            border-radius: 25px;
+            transition: all 0.5s;
+        }
+        
+        nav .buttons button:hover {
+            cursor: pointer;
+            font-size: 21px;
+            padding: 6px 11px;
+            border: 2px solid red;
+            background-color: azure;
+            color: blue;
+        }
+        
+        .main {
+            position: relative;
+            width: 40%;
+            border-radius: 25px 0 25px 0;
+            background-color: rgba(0, 255, 255, 0.509);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            height: 50vh;
+        }
+        
+        .details {
+            text-align: center;
+            padding: 0 15px;
+            max-width: 60%;
+            float: left;
+        }
+        
+        .details h1 {
+            font-size: 40px;
+            color: blueviolet;
+            margin: 15px 0;
+        }
+        
+        .details h3 {
+            margin: 15px 0;
+            font-size: 20px;
+        }
+        
+        .details p {
+            font-size: 12px;
+        }
+        
+        .main .pic {
+            width: 40%;
+            float: right;
+        }
+        
+        .main .pic img {
+            transform: translateX(-150px);
+        }
+        
+        .body {
+            width: 100%;
+            height: 100vh;
+            background-color: gray;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .lside {
+            float: left;
+        }
+        
+        .rside {
+            float: right;
+        }
+        
+        .lside,
+        .rside {
+            width: 50%;
+            height: 100%;
+            margin: 30px;
+            border: 0;
+            outline: 0;
+            background-color: rgb(166, 201, 233);
+            color: black;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .lside img,
+        .rside img {
+            margin-top: 15px;
+            height: 100%;
+        }
+        
+        .text {
+            padding: 30px 10px;
+            width: 50%;
+            background-color: rgb(135, 135, 135);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+            margin-top: -45px;
+            border: 0;
+            outline: 0;
+            border-radius: 15px;
+        }
+        
+        .footer {
+            height: 50vh;
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .footer .links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 5px;
+        }
+        
+        .footer .links li {
+            padding: 5px 15px;
+            transition: 0.5s;
+            list-style: none;
+        }
+        
+        .footer .links li img {
+            height: 25px;
+            width: 25px;
+        }
+        
+        footer .links li :hover {
+            transform: translateY(15px);
+        }
+        
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background-color: transparent;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        
+        #myBtn img {
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="top">
+            <div onclick="topFunction()" id="myBtn" title="Go to top"><img src="up.png" alt=""></div>
+        </div>
+        <nav>
+            <div class="logo"></div>
+            <div class="buttons">
+
+                <li><a href="">Home</a></li>
+                <li><a href="">pricing</a></li>
+                <li><a href="">Features</a></li>
+
+                <button class="git"><a href="timepass.html">get in touch</a></button>
+            </div>
+        </nav>
+        <div class="main">
+            <div class="details">
+                <h1>Zia-ur-Rehman</h1>
+                <h3>53409</h3>
+                <p>(Balochistan University of Information Technology, Engineering and Management Sciences, BUITEMS, Airport Road,Quetta)</p>
+            </div>
+            <div class="pic">
+                <img height="700px" width="600px" src="DP.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="lside">
+            <img src="1.jpg" alt="">
+            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, ab?</div>
+        </div>
+        <div class="rside">
+            <img src="2.jpg" alt="">
+            <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, ab?</div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="links">
+            <li>
+                <a href="#" target="_blank"><img src="facebook.ico" alt=""></a>
+            </li>
+            <li>
+                <a href="#" target="_blank"><img src="insta.ico" alt=""></a>
+            </li>
+            <li>
+                <a href="#" target="_blank"><img src="twitter.ico" alt=""></a>
+            </li>
+        </div>
+        <div class="copy">
+            <p>&copy;Copyrights Reserved 2022 - Zia-ur-Rehman</p>
+        </div>
+    </div>
+    <script>
+        let mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
